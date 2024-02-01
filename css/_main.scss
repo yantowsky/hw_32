@@ -1,0 +1,24 @@
+body {
+  padding: 25px 4% 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+
+  .logo {
+    width: 122px;
+    height: 122px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s all;
+
+    .logo__img,
+    .logo__text {
+      position: absolute;
+    }
+  }
+
+  .logo:hover {
+    transform: rotateY(180deg);
+    transition: 1s all;
+  }
+}

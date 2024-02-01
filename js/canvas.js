@@ -1,0 +1,24 @@
+const logoStar = document.getElementById("logo-star");
+const ctx = logoStar.getContext("2d");
+ctx.beginPath();
+ctx.moveTo(1, 61);
+ctx.lineTo(19, 43);
+ctx.lineTo(19, 19);
+ctx.lineTo(43, 19);
+ctx.lineTo(61, 1);
+ctx.lineTo(79, 19);
+ctx.lineTo(103, 19);
+ctx.lineTo(103, 43);
+ctx.lineTo(121, 61);
+ctx.lineTo(103, 79);
+ctx.lineTo(103, 103);
+ctx.lineTo(79, 103);
+ctx.lineTo(61, 121);
+ctx.lineTo(43, 103);
+ctx.lineTo(19, 103)
+ctx.lineTo(19, 79);
+ctx.closePath();
+ctx.lineWidth = 2;
+ctx.fillStyle = "#CFE2F3";
+ctx.fill();
+ctx.stroke();
