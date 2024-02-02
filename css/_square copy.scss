@@ -1,0 +1,63 @@
+.square {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  right: 0;
+  transition: 1s all;
+  background-color: #cfe2f3;
+  border-radius: 1px;
+  overflow: hidden;
+
+  .square__item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    .trapezium__item {
+      position: absolute;
+      width: 100%;
+      border-bottom: 12px solid #000;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+    }
+
+    .trapezium__item::before {
+      content: "";
+      position: absolute;
+      width: 57px;
+      left: -8px;
+      border-bottom: 8px solid #d8e7f5;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 2px solid transparent;
+    }
+    .trapezium__item--mod {
+      transform: rotate(180deg);
+    }
+
+    .trapezium__item--spec {
+      bottom: 0;
+    }
+    .trapezium__item--spec::before {
+      border-bottom: 8px solid #a5b4c2;
+    }
+  }
+  .square__item--mod {
+    transform: rotate(-90deg);
+    background: none;
+
+    .trapezium__item::before {
+      border-bottom: 8px solid #e2edf7;
+    }
+
+    .trapezium__item--spec::before {
+      border-bottom: 8px solid #7c8791;
+    }
+  }
+}
+
+.square:hover {
+  transform-origin: center center;
+  transform: rotate(360deg);
+  transition: 1s all;
+}

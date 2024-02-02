@@ -1,24 +1,109 @@
 body {
-  padding: 25px 4% 40px;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 25px 2% 40px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 
-  .logo {
-    width: 122px;
-    height: 122px;
+  .header {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    transition: 1s all;
 
-    .logo__img,
-    .logo__text {
-      position: absolute;
+    .logo {
+      width: 122px;
+      height: 122px;
+      margin-left: 5.3%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: 1s all;
+
+      .logo__img,
+      .logo__text {
+        position: absolute;
+      }
+    }
+
+    .logo:hover {
+      transform: rotateY(180deg);
+      transition: 1s all;
+    }
+
+    .title {
+      width: 100%;
+      font-size: 3rem;
+      text-align: center;
     }
   }
+  .main {
+    border: 1px solid #000;
+    margin: 40px 2% 0;
+    .tabs {
+      display: flex;
+      flex-direction: row;
+      .tabs__wrap {
+        width: 27%;
+        display: flex;
+        flex-direction: column;
+        background-color: #cfe2f3;
+        .tabs__list {
+          .tabs__item {
+            padding: 12px 4.845%;
+            font-size: 1.5rem;
+            border-bottom: 1px solid #000;
+            border-right: 1px solid #000;
+          }
+        }
+        .copyright {
+          height: 100%;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          padding-bottom: 12px;
+          border-right: 1px solid #000;
+          font-family: "Times New Roman", Times, serif;
+          font-size: 0.9rem;
+          color: #999999;
+        }
+      }
+      .tabs__section {
+        width: 73%;
+        padding: 12px 1.305% 30px 3.263%;
+        background-color: #d9d2e9;
 
-  .logo:hover {
-    transform: rotateY(180deg);
-    transition: 1s all;
+        .text {
+          display: grid;
+          grid-template-areas:
+            "A A A B B B"
+            "C C D D E E"
+            "F F G G G G";
+          gap: 30px;
+          .text__item--mod-a {
+            grid-area: A;
+          }
+          .text__item--mod-b {
+            grid-area: B;
+          }
+          .text__item--mod-c {
+            grid-area: C;
+          }
+          .text__item--mod-d {
+            grid-area: D;
+          }
+          .text__item--mod-e {
+            grid-area: E;
+          }
+          .text__item--mod-f {
+            grid-area: F;
+          }
+          .text__item--mod-g {
+            grid-area: G;
+          }
+        }
+      }
+    }
   }
 }
