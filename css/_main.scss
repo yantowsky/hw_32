@@ -1,6 +1,5 @@
 body {
   max-width: 1000px;
-  max-height: fit-content;
   margin: 0 auto;
   padding: 27px 2% 40px;
   font-family: Arial, Helvetica, sans-serif;
@@ -37,9 +36,8 @@ body {
 
     .title {
       width: 100%;
-      font-size: 1.7rem;
+      font-size: 3.5rem;
       text-align: center;
-
       @media (min-width: 1000px) {
         font-size: 3rem;
       }
@@ -54,7 +52,6 @@ body {
       flex-direction: row;
       .tabs__wrap {
         width: 28%;
-        // height: 560px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -64,18 +61,24 @@ body {
           flex-direction: column;
           .tabs__item {
             position: relative;
-            height: 49px;
             padding: 12px 4.845%;
+            font-size: 2.5rem;
+            height: 90px;
             overflow: hidden;
-            font-size: 1.2rem;
             border-bottom: 1px solid #000;
             border-right: 1px solid #000;
             @media (min-width: 1000px) {
+              height: 49px;
               font-size: 1.5rem;
             }
 
             .tabs__text {
+              height: 100%;
               position: absolute;
+              display: flex;
+              align-items: center;
+              left: 12px;
+              top: 0;
               white-space: nowrap;
             }
           }
@@ -98,13 +101,15 @@ body {
           padding: 12px 0;
           border-right: 1px solid #000;
           font-family: "Times New Roman", Times, serif;
-          font-size: 0.9rem;
+          font-size: 1.5rem;
           color: #999;
+          @media (min-width: 1000px) {
+            font-size: 0.9rem;
+          }
         }
       }
       .tabs__section {
         width: 72%;
-        // height: 560px;
         padding: 15px 2.8% 30px 3.263%;
         display: flex;
         justify-content: center;
@@ -114,7 +119,7 @@ body {
         background-color: #d9d2e9;
 
         .tabs__body {
-          font-size: 1.5rem;
+          font-size: 3rem;
           text-align: center;
           @media (min-width: 1000px) {
             font-size: 2.5rem;
@@ -124,12 +129,11 @@ body {
         .text {
           display: flex;
           flex-direction: column;
-          gap: 20px;
-          font-size: 1rem;
+          gap: 30px;
+          font-size: 2rem;
           text-align: left;
           @media (min-width: 1000px) {
             display: grid;
-            gap: 30px;
             grid-template-areas:
               "A A A B B B"
               "C C D D E E"

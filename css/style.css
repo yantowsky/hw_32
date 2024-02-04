@@ -145,8 +145,6 @@ table {
 
 body {
   max-width: 1000px;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
   margin: 0 auto;
   padding: 27px 2% 40px;
   font-family: Arial, Helvetica, sans-serif;
@@ -179,7 +177,7 @@ body .header .logo:hover {
 }
 body .header .title {
   width: 100%;
-  font-size: 1.7rem;
+  font-size: 3.5rem;
   text-align: center;
 }
 @media (min-width: 1000px) {
@@ -209,20 +207,26 @@ body .main .tabs .tabs__wrap .tabs__list {
 }
 body .main .tabs .tabs__wrap .tabs__list .tabs__item {
   position: relative;
-  height: 49px;
   padding: 12px 4.845%;
+  font-size: 2.5rem;
+  height: 90px;
   overflow: hidden;
-  font-size: 1.2rem;
   border-bottom: 1px solid #000;
   border-right: 1px solid #000;
 }
 @media (min-width: 1000px) {
   body .main .tabs .tabs__wrap .tabs__list .tabs__item {
+    height: 49px;
     font-size: 1.5rem;
   }
 }
 body .main .tabs .tabs__wrap .tabs__list .tabs__item .tabs__text {
+  height: 100%;
   position: absolute;
+  display: flex;
+  align-items: center;
+  left: 12px;
+  top: 0;
   white-space: nowrap;
 }
 body .main .tabs .tabs__wrap .tabs__list .tabs__item:hover {
@@ -241,8 +245,13 @@ body .main .tabs .tabs__wrap .copyright {
   padding: 12px 0;
   border-right: 1px solid #000;
   font-family: "Times New Roman", Times, serif;
-  font-size: 0.9rem;
+  font-size: 1.5rem;
   color: #999;
+}
+@media (min-width: 1000px) {
+  body .main .tabs .tabs__wrap .copyright {
+    font-size: 0.9rem;
+  }
 }
 body .main .tabs .tabs__section {
   width: 72%;
@@ -255,7 +264,7 @@ body .main .tabs .tabs__section {
   background-color: #d9d2e9;
 }
 body .main .tabs .tabs__section .tabs__body {
-  font-size: 1.5rem;
+  font-size: 3rem;
   text-align: center;
 }
 @media (min-width: 1000px) {
@@ -266,14 +275,13 @@ body .main .tabs .tabs__section .tabs__body {
 body .main .tabs .tabs__section .text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  font-size: 1rem;
+  gap: 30px;
+  font-size: 2rem;
   text-align: left;
 }
 @media (min-width: 1000px) {
   body .main .tabs .tabs__section .text {
     display: grid;
-    gap: 30px;
     grid-template-areas: "A A A B B B" "C C D D E E" "F F G G G G";
     font-size: 1.1rem;
   }

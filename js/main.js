@@ -63,10 +63,10 @@ let arrTextTabsBody = [];
 
 for (key in programCom) {
     arrNewTabsItem.push(`
-    <li class="tabs__item">
-    <h3 class="tabs__text">
-        ${programCom[key].num}. ${programCom[key].title}
-        </h3>
+        <li class="tabs__item">
+            <h3 class="tabs__text">
+                ${programCom[key].num}. ${programCom[key].title}
+            </h3>
         </li>
         `);
     arrTextTabsBody.push(programCom[key].text);
