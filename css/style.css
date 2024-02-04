@@ -196,7 +196,6 @@ body .main .tabs {
 }
 body .main .tabs .tabs__wrap {
   width: 28%;
-  height: 560px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -245,7 +244,6 @@ body .main .tabs .tabs__wrap .copyright {
 }
 body .main .tabs .tabs__section {
   width: 72%;
-  height: 560px;
   padding: 15px 2.8% 30px 3.263%;
   display: flex;
   justify-content: center;
