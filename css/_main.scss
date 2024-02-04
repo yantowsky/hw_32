@@ -1,10 +1,9 @@
 body {
-  position: relative;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 25px 2% 40px;
+  padding: 27px 2% 40px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
 
   .header {
     display: flex;
@@ -14,16 +13,19 @@ body {
     .logo {
       width: 122px;
       height: 122px;
-      margin-left: 5.3%;
+      margin-left: 3%;
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
       transition: 1s all;
 
       .logo__img,
       .logo__text {
         position: absolute;
+      }
+
+      .logo__text {
+        font-size: 1.3rem;
       }
     }
 
@@ -34,53 +36,105 @@ body {
 
     .title {
       width: 100%;
-      font-size: 3rem;
+      font-size: 1.7rem;
       text-align: center;
+
+      @media (min-width: 1000px) {
+        font-size: 3rem;
+      }
     }
   }
   .main {
+    position: relative;
     border: 1px solid #000;
-    margin: 40px 2% 0;
+    margin-top: 27px;
     .tabs {
       display: flex;
       flex-direction: row;
       .tabs__wrap {
-        width: 27%;
+        width: 28%;
+        height: 560px;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         background-color: #cfe2f3;
         .tabs__list {
+          display: flex;
+          flex-direction: column;
           .tabs__item {
+            position: relative;
+            height: 49px;
             padding: 12px 4.845%;
-            font-size: 1.5rem;
+            overflow: hidden;
+            font-size: 1.2rem;
             border-bottom: 1px solid #000;
             border-right: 1px solid #000;
+            @media (min-width: 1000px) {
+              font-size: 1.5rem;
+            }
+
+            .tabs__text {
+              position: absolute;
+              white-space: nowrap;
+            }
+          }
+
+          .tabs__item:hover {
+            cursor: pointer;
+            background-color: #d9d2e9;
+          }
+
+          .tabs__item--mod {
+            background-color: #d9d2e9;
+            border-right: none;
           }
         }
         .copyright {
-          height: 100%;
           display: flex;
-          align-items: flex-end;
           justify-content: center;
-          padding-bottom: 12px;
+          align-items: flex-end;
+          flex-grow: 1;
+          padding: 12px 0;
           border-right: 1px solid #000;
           font-family: "Times New Roman", Times, serif;
           font-size: 0.9rem;
-          color: #999999;
+          color: #999;
         }
       }
       .tabs__section {
-        width: 73%;
-        padding: 12px 1.305% 30px 3.263%;
+        width: 72%;
+        height: 560px;
+        padding: 15px 2.8% 30px 3.263%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-y: scroll;
+        scrollbar-width: none;
         background-color: #d9d2e9;
 
+        .tabs__body {
+          font-size: 1.5rem;
+          text-align: center;
+          @media (min-width: 1000px) {
+            font-size: 2.5rem;
+          }
+        }
+
         .text {
-          display: grid;
-          grid-template-areas:
-            "A A A B B B"
-            "C C D D E E"
-            "F F G G G G";
-          gap: 30px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          font-size: 1rem;
+          text-align: left;
+          @media (min-width: 1000px) {
+            display: grid;
+            gap: 30px;
+            grid-template-areas:
+              "A A A B B B"
+              "C C D D E E"
+              "F F G G G G";
+            font-size: 1.1rem;
+          }
           .text__item--mod-a {
             grid-area: A;
           }
@@ -104,6 +158,18 @@ body {
           }
         }
       }
+    }
+  }
+  .cursor {
+    animation: opacity 0.4s infinite alternate;
+    font-weight: 900;
+  }
+  @keyframes opacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }

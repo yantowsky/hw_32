@@ -1,8 +1,9 @@
 .square {
   position: absolute;
-  width: 80px;
-  height: 80px;
-  right: 0;
+  width: 55px;
+  height: 55px;
+  right: -27px;
+  top: -27px;
   transition: 1s all;
   background-color: #cfe2f3;
   border-radius: 1px;
@@ -16,20 +17,20 @@
     .trapezium__item {
       position: absolute;
       width: 100%;
-      border-bottom: 12px solid #000;
-      border-left: 12px solid transparent;
-      border-right: 12px solid transparent;
+      border-bottom: 7px solid #000;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
     }
 
     .trapezium__item::before {
       content: "";
       position: absolute;
-      width: 57px;
-      left: -8px;
-      border-bottom: 8px solid #d8e7f5;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 2px solid transparent;
+      width: 41.5px;
+      left: -5px;
+      border-bottom: 5px solid #d8e7f5;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 1px solid transparent;
     }
     .trapezium__item--mod {
       transform: rotate(180deg);
@@ -39,7 +40,7 @@
       bottom: 0;
     }
     .trapezium__item--spec::before {
-      border-bottom: 8px solid #a5b4c2;
+      border-bottom: 5px solid #a5b4c2;
     }
   }
   .square__item--mod {
@@ -47,11 +48,11 @@
     background: none;
 
     .trapezium__item::before {
-      border-bottom: 8px solid #e2edf7;
+      border-bottom: 5px solid #e2edf7;
     }
 
     .trapezium__item--spec::before {
-      border-bottom: 8px solid #7c8791;
+      border-bottom: 5px solid #7c8791;
     }
   }
 }

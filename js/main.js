@@ -50,4 +50,110 @@ const programCom = {
         text: "Не пиши милиць і затичок. Виправляй причину, а не наслідок, і буде тобі щастя."
     }
 }
+function typeWrite() {
+    if (i < txt.length) {
+        text.innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
 
+let arrNewTabsItem = [];
+let arrTextTabsBody = [];
+
+for (key in programCom) {
+    arrNewTabsItem.push(`
+    <li class="tabs__item">
+    <h3 class="tabs__text">
+        ${programCom[key].num}. ${programCom[key].title}
+        </h3>
+        </li>
+        `);
+    arrTextTabsBody.push(programCom[key].text);
+}
+
+let title = document.querySelector(".title");
+console.log(title);
+let copyright = document.querySelector(".copyright");
+console.log(copyright);
+let tabsItem = document.querySelectorAll(".tabs__item");
+console.log(tabsItem);
+let tabsList = document.querySelector(".tabs__list");
+console.log(tabsList);
+let tabsSection = document.querySelector(".tabs__section");
+console.log(tabsSection);
+
+function getTabsBodyAnimText(index) {
+    let h2 = document.createElement("h2");
+    h2.classList.add("tabs__body");
+    h2.innerText = `${arrTextTabsBody[index]}`;
+    tabsSection.replaceChildren(h2);
+    let tabsBody = document.querySelector(".tabs__body");
+    let cursor = document.createElement("span");
+    cursor.classList.add("cursor");
+    cursor.textContent = "|";
+    let inText = arrTextTabsBody[index];
+    let outText = "";
+    let animationText = (i) => {
+        setTimeout(() => {
+            outText += inText[i];
+            tabsBody.textContent = outText;
+            tabsBody.append(cursor);
+        }, 120 * i);
+    }
+    for (let i = 0; i < inText.length; i++) {
+        animationText(i);
+    }
+}
+
+let arrLastClickIndex = [];
+let actualClickIndex;
+
+tabsItem.forEach((element, index) => {
+    console.log(element);
+    tabsItem[index].addEventListener("click", function () {
+        title.innerText = "Десять заповідей програміста";
+        copyright.innerText = "© 2024";
+        actualClickIndex = index;
+        tabsList.innerHTML = arrNewTabsItem.join("");
+        getTabsBodyAnimText(index);
+        let newTabsItem = document.querySelectorAll(".tabs__item");
+        console.log(newTabsItem);
+        let newTabsText = document.querySelectorAll(".tabs__text");
+        console.log(newTabsText);
+        newTabsItem[index].style.borderRight = "none";
+        newTabsItem[index].style.backgroundColor = "#d9d2e9";
+
+        newTabsItem.forEach((element, index) => {
+            console.log(element);
+            newTabsItem[index].addEventListener("mouseover", function () {
+                newTabsText[index].style.transform = `translateX(calc(${newTabsItem[index].clientWidth}px - 100% - 20px))`;
+                newTabsText[index].style.transition = "3s all";
+                newTabsItem[index].style.backgroundColor = "#d9d2e9";
+            });
+            newTabsItem[index].addEventListener("mouseout", function () {
+                newTabsText[index].style.transform = `translateX(0)`;
+                newTabsText[index].style.transition = "5s all";
+                newTabsItem[index].style.backgroundColor = "#cfe2f3";
+                newTabsItem[actualClickIndex].style.backgroundColor = "#d9d2e9";
+            });
+            newTabsItem[index].addEventListener("click", function () {
+                getTabsBodyAnimText(index);
+                newTabsItem[actualClickIndex].style.backgroundColor = "#cfe2f3";
+                newTabsItem[actualClickIndex].style.borderRight = "1px solid #000";
+                actualClickIndex = index;
+                arrLastClickIndex.push(index);
+                if (arrLastClickIndex.length === 3) {
+                    arrLastClickIndex.shift();
+                }
+                (index === arrLastClickIndex[0]) ?
+                    (newTabsItem[index].style.borderRight = "none",
+                        newTabsItem[index].style.backgroundColor = "#d9d2e9") :
+                    (newTabsItem[index].style.borderRight = "none",
+                        newTabsItem[index].style.backgroundColor = "#d9d2e9",
+                        newTabsItem[arrLastClickIndex[0]].style.backgroundColor = "#cfe2f3",
+                        newTabsItem[arrLastClickIndex[0]].style.borderRight = "1px solid #000")
+            });
+        });
+    });
+});
