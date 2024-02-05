@@ -50,13 +50,6 @@ const programCom = {
         text: "Не пиши милиць і затичок. Виправляй причину, а не наслідок, і буде тобі щастя."
     }
 }
-function typeWrite() {
-    if (i < txt.length) {
-        text.innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-    }
-}
 
 let arrNewTabsItem = [];
 let arrTextTabsBody = [];
